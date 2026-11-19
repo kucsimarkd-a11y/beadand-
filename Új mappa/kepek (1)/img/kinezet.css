@@ -1,0 +1,81 @@
+* {
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 155px 155px;
+    grid-template-areas:
+        "h n n"
+        "as f ar";
+    gap: 10px;
+    padding: 10px;
+}
+
+header,
+aside,
+footer,
+article {
+    padding: 12px;
+    color: white;
+    text-align: right;   /* felirat jobbra */
+}
+
+header {
+    grid-area: h;
+    background-image: url(dandelion.jpg);
+}
+
+nav {
+    grid-area: n;
+    background-image: url(dand2.jpg);
+    display: flex;
+    align-items: flex-start;  /* a menüsáv felül van */
+    padding: 8px;
+}
+
+/* Félig átlátszó sötétkék menüsáv */
+nav ol,
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    width: 100%;
+    padding: 12px 12px;
+    background-color: rgba(50, 50, 100, 0.6);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Szürkés fedőréteg + halvány belső keret */
+aside {
+    grid-area: as;
+    background-image:
+        linear-gradient(rgba(120, 120, 120, 0.6), rgba(120, 120, 120, 0.6)),
+        url(dand3.jpg);
+    outline: 2px solid rgba(255, 255, 255, 0.25);
+    outline-offset: -8px;
+}
+
+footer {
+    grid-area: f;
+    background-image: url(dandy.gif);
+}
+
+/* Fehéres, kifakított fedőréteg */
+article {
+    grid-area: ar;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+        url(dandy2.gif);
+}
